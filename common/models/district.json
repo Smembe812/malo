@@ -1,0 +1,37 @@
+{
+  "name": "District",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "population": {
+      "type": "number",
+      "required": true
+    },
+    "tas": {
+      "type": [
+        "number"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "districtTa": {
+      "type": "hasMany",
+      "model": "TA",
+      "foreignKey": "districtId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
